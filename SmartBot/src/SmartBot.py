@@ -11,17 +11,31 @@ from flask import request
 from flask import Response
 from flask import make_response
 from flask import current_app
+from flask import render_template
 
 from datetime import timedelta
 from functools import update_wrapper
 
+import os.path
 import json
 import logging
 
 app = Flask(__name__)
+app.config.from_object(__name__)
 
 chatbot = ChatBot('Smart Bot', trainer='chatterbot.trainers.ChatterBotCorpusTrainer')
 #chatbot = ChatBot('Smart Bot', trainer='chatterbot.trainers.UbuntuCorpusTrainer')
+
+def root_dir():  # pragma: no cover
+    return os.path.abspath(os.path.dirname(__file__))
+
+
+def get_file(filename):  # pragma: no cover
+    try:
+        src = os.path.join(root_dir(), filename)
+        return open(src).read()
+    except IOError as exc:
+        return str(exc)
 
 def crossdomain(origin=None, methods=None, headers=None, max_age=21600, attach_to_all=True, automatic_options=True):
     if methods is not None:
@@ -63,10 +77,12 @@ def crossdomain(origin=None, methods=None, headers=None, max_age=21600, attach_t
     return decorator
 
 
-@app.route('/')
+@app.route('/', methods=['GET'])
 @crossdomain(origin='*')
 def home():
-    return "Hello SmartBot!"
+    content = get_file('html/index.html')
+    return Response(content, mimetype="text/html")
+    #return render_template('html/index.html')
 
 """
 method: GET
