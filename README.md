@@ -1,9 +1,15 @@
+# Home Page
+
+```html
+[Smart Bot](http://ec2-54-219-151-113.us-west-1.compute.amazonaws.com:8080)
+```
+
 # Api
 
 ```html
 protocol: HTTP
 method: GET
-url: http://127.0.0.1:8080/chat?sentence=xyz
+url: http://ec2-54-219-151-113.us-west-1.compute.amazonaws.com:8080/chat?sentence=xyz
 
 ```
 Example:
