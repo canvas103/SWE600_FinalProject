@@ -1,8 +1,6 @@
 # Home Page
 
-```html
 [Smart Bot](http://ec2-54-219-151-113.us-west-1.compute.amazonaws.com:8080)
-```
 
 # Api
 
