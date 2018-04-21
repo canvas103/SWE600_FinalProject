@@ -21,6 +21,7 @@ import logging
 app = Flask(__name__)
 
 chatbot = ChatBot('Smart Bot', trainer='chatterbot.trainers.ChatterBotCorpusTrainer')
+#chatbot = ChatBot('Smart Bot', trainer='chatterbot.trainers.UbuntuCorpusTrainer')
 
 def crossdomain(origin=None, methods=None, headers=None, max_age=21600, attach_to_all=True, automatic_options=True):
     if methods is not None:
@@ -81,5 +82,6 @@ def chat():
 if __name__ == '__main__':
     # preprocessing, training
     chatbot.train('chatterbot.corpus.english')
+    #chatbot.train()
     app.run('0.0.0.0', 8080)
 
