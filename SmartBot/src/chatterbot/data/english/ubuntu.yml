@@ -17,5 +17,5 @@ conversations:
   - did you try: find . -name "process.txt" This will search the current directory for a file called process.txt.
 - - how can I setup & run PhantomJS on Ubuntu?
   - for Ubuntu you can use the prebuilt versions downloadable from the PhantomJS site.
-- - how do I install the penSSL libraries on Ubuntu?
+- - how do I install the openSSL libraries on Ubuntu?
   - you want the openssl-devel package. At least I think it's -devel on Ubuntu. Might be -dev. It's one of the two.
