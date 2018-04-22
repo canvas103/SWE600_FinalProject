@@ -1,0 +1,21 @@
+categories:
+- ubuntu
+conversations:
+- - eclipse menus don't show up after upgrading to Ubuntu 13.10
+  - you should type export UBUNTU_MENUPROXY=0 before opening eclipse, and you have to open eclipse from the terminal instead of the global menu.
+- - what are the differences and similarities between ffmpeg, libav, and avconv?
+  - if you are using avconv then you are using Libav. If you are using ffmpeg you could be using FFmpeg or Libav. Refer to the first line in the console output to tell the difference: the copyright notice will either mention FFmpeg or Libav.
+- - how can I stop redis-server?
+  - try killall redis-server. You may also use ps aux to find the name and pid of your server, and then kill it with kill -9 here_pid_number.
+- - how to thoroughly purge and reinstall postgresql on ubuntu?
+  - apt-get purge postgresql* is enough.
+- - how to replace spaces in file names using a bash script
+  - you need to descend depth first, because a whitespace filename can be part of a whitespace directory
+- - how to run cron job every 2 hours
+  - you were close, just do: 0 */2 * * *  /home/username/test.sh
+- - how to find a file in Ubuntu?
+  - did you try: find . -name "process.txt" This will search the current directory for a file called process.txt.
+- - how can I setup & run PhantomJS on Ubuntu?
+  - for Ubuntu you can use the prebuilt versions downloadable from the PhantomJS site.
+- - how do I install the penSSL libraries on Ubuntu?
+  - you want the openssl-devel package. At least I think it's -devel on Ubuntu. Might be -dev. It's one of the two.
