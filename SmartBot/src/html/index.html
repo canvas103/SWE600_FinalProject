@@ -87,7 +87,7 @@ var messages = [], //array that hold the record of each string in chat
 //edit this function to change what the chatbot says
 function chatbotResponse() {
   var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open("GET", "http://127.0.0.1:8080/chat?sentence=" + lastUserMessage, false); // false for synchronous request
+    xmlHttp.open("GET", `http://${location.host}/chat?sentence=${lastUserMessage}`, false); // false for synchronous request
     xmlHttp.send(null);
     botMessage = xmlHttp.responseText;
 }
